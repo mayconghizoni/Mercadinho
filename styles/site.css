@@ -30,10 +30,7 @@ footer{
     text-align: center;
     padding: 5px;
 }
-#frmCadastroProduto, #frmCadastroMarca{
+#frmCadastroProduto, #frmCadastroMarca, #frmVendaProduto{
     width: 500px;
     margin: 20px auto;
-}
-#textHome{
-    text-align: center;
 }

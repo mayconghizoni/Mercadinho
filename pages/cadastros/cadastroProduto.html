@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="../../styles/site.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="../../js/site.js"></script>
     <title>Mercadinho da Soft</title>
 </head>
 <body>
@@ -13,7 +14,7 @@
 
         <nav>
             <a href="../../index.html" type="button" class="btn btn-secondary btn-sm btn-sm">Home</a>
-            <a href="cadastroProduto.html" type="button" class="btn btn-secondary btn-sm btn-sm">Cadastro de produto</a>
+            <a href="cadastroProduto.html" type="button" class="btn btn-secondary btn-sm btn-sm">Cadastro de produtos</a>
             <a href="cadastroMarcas.html" type="button" class="btn btn-secondary btn-sm btn-sm">Cadastro de marcas</a>
             <a href="../vendas.html" type="button" class="btn btn-secondary btn-sm btn-sm">Vendas</a>
         </nav>
@@ -22,7 +23,7 @@
 
     <section>
        
-        <form id="frmCadastroProduto">
+        <form name="frmCadastroProduto" id="frmCadastroProduto" action="#" onsubmit="return valid_cadastro_produto();">
 
             <legend>Cadastre seu produto</legend>
             <div class="form-group">
@@ -30,14 +31,18 @@
                 <input type="text" class="form-control" name="nomeProduto" id="nomeProduto" placeholder="Arroz branco">
             </div>
             <div class="form-group">
+                <label for="quantidadeProduto">Quantidade do produto: </label>
+                <input type="text" class="form-control" name="quantidadeProduto" id="quantidadeProduto" placeholder="5">
+            </div>
+            <div class="form-group">
                 <label for="valorProduto">Valor do produto: </label>
                 <input type="text" class="form-control" name="valorProduto" id="valorProduto" placeholder="R$5,00">
             </div>
             <div class="form-row align-items-center">
                 <div class="col-auto my-1">
-                <label for="selecionarTipo">Selecione o tipo de produto: </label>
-                  <select class="custom-select mr-sm-2" id="selecionarTipo">
-                    <option selected>Escolha</option>
+                <label for="selecionarMarca">Selecione a marca do produto: </label>
+                  <select name="selecionarMarca" class="custom-select mr-sm-2" id="selecionarMarca">
+                    <option value="">Escolha</option>
                     <option value="1">Um</option>
                     <option value="2">Dois</option>
                     <option value="3">Três</option>
