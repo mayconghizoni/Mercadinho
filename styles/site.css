@@ -1,0 +1,39 @@
+header{
+    height: auto;
+    width: 100%;
+    background-image: url("/MercadinhoDaSoft/imgs/header-feira.jpg");
+    color: rgb(255, 255, 255);
+}
+header h1{
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 7px;
+}
+nav{
+    text-align: center;
+    background-color: transparent;
+}
+nav a{
+    width: 200px;
+    display: inline-block;
+    margin: 8px auto;
+}
+body{
+    margin: 0px;
+}
+section{
+    min-height: 500px;
+}
+footer{
+    background-image: url("/MercadinhoDaSoft/imgs/header-feira.jpg");
+    color: rgb(255, 255, 255);
+    text-align: center;
+    padding: 5px;
+}
+#frmCadastroProduto, #frmCadastroMarca{
+    width: 500px;
+    margin: 20px auto;
+}
+#textHome{
+    text-align: center;
+}
