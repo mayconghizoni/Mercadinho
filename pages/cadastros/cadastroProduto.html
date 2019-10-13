@@ -23,7 +23,7 @@
 
     <section>
        
-        <form name="frmCadastroProduto" id="frmCadastroProduto" action="#" onsubmit="return valid_cadastro_produto();">
+        <form name="frmCadastroProduto" id="frmCadastroProduto" method="POST" action="../../system/cadastroProdutos.php">
 
             <legend>Cadastre seu produto</legend>
             <div class="form-group">
@@ -38,6 +38,8 @@
                 <label for="valorProduto">Valor do produto: </label>
                 <input type="text" class="form-control" name="valorProduto" id="valorProduto" placeholder="R$5,00">
             </div>
+
+            <!-- Deve puxar marcas cadastradas no banco de dados -->
             <div class="form-row align-items-center">
                 <div class="col-auto my-1">
                 <label for="selecionarMarca">Selecione a marca do produto: </label>

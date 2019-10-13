@@ -22,8 +22,9 @@
 
     <section>
         
-        <form name="frmVendaProduto" id="frmVendaProduto" onsubmit="return valid_vendas();">
+        <form name="frmVendaProduto" id="frmVendaProduto" method="POST" action="../system/vendaProdutos.php">
 
+            <!-- Deve puxar produtos cadastrados no banco de dados -->
             <legend>Selecione um produto para venda</legend>
             <div class="form-row align-items-center">
                 <div class="col-auto my-1">
