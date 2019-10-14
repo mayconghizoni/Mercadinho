@@ -24,6 +24,8 @@ else{
 
     echo "<script> alert('Cadastro efetuado com sucesso!');";
     echo "javascript:window.location='../pages/cadastros/cadastroProduto.html';</script>";
+
+    //Falta conectar ao bd e fazer a inserção de valores
 }
 
 ?>
