@@ -29,10 +29,19 @@
                 <div class="col-auto my-1">
                 <label for="selecionarProduto">Selecione o produto: </label>
                   <select name="selecionarProduto" class="custom-select mr-sm-2" id="selecionarProduto">
-                    <option value="">Escolha</option>
-                    <option value="1">Batata</option>
-                    <option value="2">Arroz</option>
-                    <option value="3">Vinho</option>
+
+                  <option value="">Escolha</option>
+
+                    <?php
+                        
+                        $pdo = new PDO("pgsql:host=localhost; dbname=mercadinho;", "postgres", "postgres");
+
+                        foreach($pdo->query('select * from produtos') as $row){
+                            echo '<option value="'.$row['id'].'">'.$row['nome'].'</option>';
+                        }   
+                        
+                    ?>
+
                   </select>
                 </div>
             </div>

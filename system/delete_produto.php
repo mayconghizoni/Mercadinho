@@ -12,8 +12,12 @@ else{
     $quantidade = $_POST["qtdVendida"];
     $produto = $_POST["selecionarProduto"];
 
-    echo "<script> alert('Venda efetuada com sucesso!');";
-    echo "javascript:window.location='../pages/vendas.html';</script>";
+    $pdo = new PDO("pgsql:host=localhost; dbname=mercadinho;", "postgres", "postgres");
+
+
+    
+    // echo "<script> alert('Venda efetuada com sucesso!');";
+    // echo "javascript:window.location='../pages/vendas.html';</script>";
 }
 
 ?>

@@ -15,7 +15,7 @@
             <a href="../../index.html" type="button" class="btn btn-secondary btn-sm btn-sm">Home</a>
             <a href="cadastroProduto.php" type="button" class="btn btn-secondary btn-sm btn-sm">Cadastro de produtos</a>
             <a href="cadastroMarcas.php" type="button" class="btn btn-secondary btn-sm btn-sm">Cadastro de marcas</a>
-            <a href="../vendas.html" type="button" class="btn btn-secondary btn-sm btn-sm">Vendas</a>
+            <a href="../vendas.php" type="button" class="btn btn-secondary btn-sm btn-sm">Vendas</a>
         </nav>
     </header>
 
