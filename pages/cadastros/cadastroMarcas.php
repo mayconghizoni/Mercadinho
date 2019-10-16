@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="../../styles/site.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <script src="../../js/site.js"></script>
     <title>Mercadinho da Soft</title>
 </head>
 <body>
@@ -14,8 +13,8 @@
 
         <nav>
             <a href="../../index.html" type="button" class="btn btn-secondary btn-sm btn-sm">Home</a>
-            <a href="cadastroProduto.html" type="button" class="btn btn-secondary btn-sm btn-sm">Cadastro de produtos</a>
-            <a href="cadastroMarcas.html" type="button" class="btn btn-secondary btn-sm btn-sm">Cadastro de marcas</a>
+            <a href="cadastroProduto.php" type="button" class="btn btn-secondary btn-sm btn-sm">Cadastro de produtos</a>
+            <a href="cadastroMarcas.php" type="button" class="btn btn-secondary btn-sm btn-sm">Cadastro de marcas</a>
             <a href="../vendas.html" type="button" class="btn btn-secondary btn-sm btn-sm">Vendas</a>
         </nav>
     </header>
@@ -23,7 +22,7 @@
 
     <section>
        
-        <form name="frmCadastroMarca" id="frmCadastroMarca" method="POST" action="../../system/cadastroMarcas.php">
+        <form name="frmCadastroMarca" id="frmCadastroMarca" method="POST" action="../../system/inserir_marcas.php">
 
             <legend>Cadastre sua marca</legend>
             <div class="form-group">
@@ -44,9 +43,5 @@
         </form>
 
     </section>
-
-    <footer>
-        Copyright &copy; Maycon Ghizoni 2019
-    </footer>
 </body>
 </html>

@@ -2,11 +2,11 @@
 
 if($_POST["nomeMarca"] == ""){
     echo  "<script> alert('Preencha o campo nome da marca.');";
-    echo "javascript:window.location='../pages/cadastros/cadastroMarcas.html'</script>";
+    echo "javascript:window.location='../pages/cadastros/cadastroMarcas.php'</script>";
 }
 else if($_POST["taxaImposto"] == ""){
     echo  "<script> alert('Preencha o campo Imposto.');";
-    echo "javascript:window.location='../pages/cadastros/cadastroMarcas.html';</script>";
+    echo "javascript:window.location='../pages/cadastros/cadastroMarcas.php';</script>";
 }
 else{
     $nome = $_POST["nomeMarca"];
@@ -20,10 +20,10 @@ else{
 
         if($pdo_exec){
             echo  "<script> alert('Cadastro efetuado com sucesso!');";
-            echo "javascript:window.location='../pages/cadastros/cadastroMarcas.html';</script>";
+            echo "javascript:window.location='../pages/cadastros/cadastroMarcas.php';</script>";
         }else{
             echo "<script> alert('Erro ao efetuar cadastro!');";
-            echo "javascript:window.location='../pages/cadastros/cadastroMarcas.html';</script>";
+            echo "javascript:window.location='../pages/cadastros/cadastroMarcas.php';</script>";
         }
 
      } catch (PDOException  $e) {

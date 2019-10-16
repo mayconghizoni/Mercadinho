@@ -24,12 +24,6 @@ body{
 section{
     min-height: 500px;
 }
-footer{
-    background-image: url("/MercadinhoDaSoft/imgs/header-feira.jpg");
-    color: rgb(255, 255, 255);
-    text-align: center;
-    padding: 5px;
-}
 #frmCadastroProduto, #frmCadastroMarca, #frmVendaProduto{
     width: 500px;
     margin: 20px auto;

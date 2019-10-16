@@ -3,10 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="../../styles/site.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <script src="../../js/site.js"></script>
     <title>Mercadinho da Soft</title>
 </head>
 <body>
@@ -15,8 +13,8 @@
 
         <nav>
             <a href="../../index.html" type="button" class="btn btn-secondary btn-sm btn-sm">Home</a>
-            <a href="cadastroProduto.html" type="button" class="btn btn-secondary btn-sm btn-sm">Cadastro de produtos</a>
-            <a href="cadastroMarcas.html" type="button" class="btn btn-secondary btn-sm btn-sm">Cadastro de marcas</a>
+            <a href="cadastroProduto.php" type="button" class="btn btn-secondary btn-sm btn-sm">Cadastro de produtos</a>
+            <a href="cadastroMarcas.php" type="button" class="btn btn-secondary btn-sm btn-sm">Cadastro de marcas</a>
             <a href="../vendas.html" type="button" class="btn btn-secondary btn-sm btn-sm">Vendas</a>
         </nav>
     </header>
@@ -24,7 +22,7 @@
 
     <section>
        
-        <form name="frmCadastroProduto" id="frmCadastroProduto" method="POST" action="../../system/cadastroProdutos.php">
+        <form name="frmCadastroProduto" id="frmCadastroProduto" method="POST" action="../../system/inserir_produto.php">
 
             <legend>Cadastre seu produto</legend>
             <div class="form-group">
@@ -44,7 +42,20 @@
             <div class="form-row align-items-center">
                 <div class="col-auto my-1">
                 <label for="selecionarMarca">Selecione a marca do produto: </label>
-                  <select name="selecionarMarca" class="custom-select mr-sm-2" id="selecionarMarca"></select>
+                  <select name="selecionarMarca" class="custom-select mr-sm-2" id="selecionarMarca">
+                      <option value="">Escolha</option>
+
+                    <?php
+                        
+                        $pdo = new PDO("pgsql:host=localhost; dbname=mercadinho;", "postgres", "postgres");
+
+                        foreach($pdo->query('select * from marca') as $row){
+                            echo '<option value="'.$row['id'].'">'.$row['nome'].'</option>';
+                        }   
+                    ?>
+                    
+                  </select>
+
                 </div>
             </div>
             
@@ -57,8 +68,5 @@
 
     </section>
 
-    <footer>
-        Copyright &copy; Maycon Ghizoni 2019
-    </footer>
 </body>
 </html>
