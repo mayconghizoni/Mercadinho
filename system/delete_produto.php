@@ -11,7 +11,7 @@ else if($_POST["qtdVendida"] == ""){
     $qtd = $_POST["qtdVendida"];
     $produto = $_POST["selecionarProduto"];
 
-    $pdo = new PDO("pgsql:host=localhost; dbname=mercadinho;", "postgres", "postgres");
+    include "conexao.php";
 
     //Consulta quantidade no banco
     $consulta = $pdo->prepare("select quantidade from produtos where id = $produto");
@@ -23,8 +23,6 @@ else if($_POST["qtdVendida"] == ""){
     $linhas_quantidade_atual = $consulta->fetch(PDO::FETCH_ASSOC);
 
     $consulta->closeCursor();
-
-    echo $linhas_quantidade_atual['quantidade'];
 
     if($linhas_quantidade_atual['quantidade'] < $qtd){
 
@@ -58,20 +56,14 @@ else if($_POST["qtdVendida"] == ""){
 
         $valor_lucro = $linha_valores["valor"] - $desconto;
 
-        //Mostra na tela informações
-
-
-
-
-        //Faz update na quantidade de produtos na tabela
         
-        //Deleta produto do BD
+        //Faz update na quantidade
 
-        // $del_comando = $pdo->prepare("delete from produtos where id = $produto;");
+        $new_qtd = $linhas_quantidade_atual['quantidade'] - $qtd;
 
-        // $del_comando->execute();
+        $update_comando = $pdo->exec("update produtos set quantidade=$new_qtd where id = $produto");
 
-        // $del_comando->closeCursor();
+        //Mostra na tela informações
 
         $update_comando = true;
 

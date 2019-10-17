@@ -25,7 +25,7 @@ else{
 
     try { 
 
-        $pdo = new PDO("pgsql:host=localhost; dbname=mercadinho;", "postgres", "postgres");
+        include "conexao.php";
 
         $pdo_exec = $pdo->exec("INSERT INTO produtos (taxa, nome, quantidade, valor) VALUES ($taxa , '$nome', $qtd, $valor);");
 

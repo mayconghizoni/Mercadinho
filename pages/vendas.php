@@ -35,7 +35,9 @@
 
                     <?php
                         
-                        $pdo = new PDO("pgsql:host=localhost; dbname=mercadinho;", "postgres", "postgres");
+                        include "../system/conexao.php";
+
+                        // $pdo = new PDO("pgsql:host=localhost; dbname=mercadinho;", "postgres", "postgres");
 
                         foreach($pdo->query('select * from produtos') as $row){
                             echo '<option value="'.$row['id'].'">'.$row['nome'].'</option>';

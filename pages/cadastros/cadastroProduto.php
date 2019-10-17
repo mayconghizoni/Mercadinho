@@ -47,8 +47,8 @@
 
                     <?php
                         
-                        $pdo = new PDO("pgsql:host=localhost; dbname=mercadinho;", "postgres", "postgres");
-
+                        include "../../system/conexao.php";
+                        
                         foreach($pdo->query('select * from impostos') as $row){
                             echo '<option value="'.$row['taxa'].'">'.$row['nome'].'</option>';
                         }   
