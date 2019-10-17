@@ -14,8 +14,8 @@
         <nav>
             <a href="../index.html" type="button" class="btn btn-secondary btn-sm btn-sm">Home</a>
             <a href="cadastros/cadastroProduto.php" type="button" class="btn btn-secondary btn-sm btn-sm">Cadastro de produtos</a>
-            <a href="cadastros/cadastroMarcas.php" type="button" class="btn btn-secondary btn-sm btn-sm">Cadastro de marcas</a>
-            <a href="vendas.html" type="button" class="btn btn-secondary btn-sm btn-sm">Vendas</a>
+            <a href="cadastros/cadastroTipos.php" type="button" class="btn btn-secondary btn-sm btn-sm">Cadastro de marcas</a>
+            <a href="vendas.php" type="button" class="btn btn-secondary btn-sm btn-sm">Vendas</a>
         </nav>
     </header>
 
@@ -25,6 +25,7 @@
 
             <!-- Deve puxar produtos cadastrados no banco de dados -->
             <legend>Selecione um produto para venda</legend>
+
             <div class="form-row align-items-center">
                 <div class="col-auto my-1">
                 <label for="selecionarProduto">Selecione o produto: </label>
@@ -45,12 +46,12 @@
                   </select>
                 </div>
             </div>
-
+            
             <div class="form-group">
                 <label for="qtdVendida">Quantos produtos deseja vender: </label>
                 <input name="qtdVendida" type="text" class="form-control" id="qtdVendida" placeholder="2">
             </div>
-            
+
             <hr>
             
             <button type="submit" class="btn btn-primary">Vender produto</button>

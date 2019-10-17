@@ -14,7 +14,7 @@
         <nav>
             <a href="../../index.html" type="button" class="btn btn-secondary btn-sm btn-sm">Home</a>
             <a href="cadastroProduto.php" type="button" class="btn btn-secondary btn-sm btn-sm">Cadastro de produtos</a>
-            <a href="cadastroMarcas.php" type="button" class="btn btn-secondary btn-sm btn-sm">Cadastro de marcas</a>
+            <a href="cadastroTipos.php" type="button" class="btn btn-secondary btn-sm btn-sm">Cadastro de impostos</a>
             <a href="../vendas.php" type="button" class="btn btn-secondary btn-sm btn-sm">Vendas</a>
         </nav>
     </header>
@@ -30,27 +30,27 @@
                 <input type="text" class="form-control" name="nomeProduto" id="nomeProduto" placeholder="Arroz branco">
             </div>
             <div class="form-group">
-                <label for="quantidadeProduto">Quantidade do produto: </label>
-                <input type="text" class="form-control" name="quantidadeProduto" id="quantidadeProduto" placeholder="5">
-            </div>
-            <div class="form-group">
                 <label for="valorProduto">Valor do produto: </label>
                 <input type="text" class="form-control" name="valorProduto" id="valorProduto" placeholder="R$5,00">
+            </div>
+            <div class="form-group">
+                <label for="quantidadeProduto">Quantidade do produto: </label>
+                <input type="text" class="form-control" name="quantidadeProduto" id="quantidadeProduto" placeholder="5">
             </div>
 
             <!-- Deve puxar marcas cadastradas no banco de dados -->
             <div class="form-row align-items-center">
                 <div class="col-auto my-1">
-                <label for="selecionarMarca">Selecione a marca do produto: </label>
-                  <select name="selecionarMarca" class="custom-select mr-sm-2" id="selecionarMarca">
+                <label for="selecionarTaxa">Selecione o tipo de imposto do produto: </label>
+                  <select name="selecionarTaxa" class="custom-select mr-sm-2" id="selecionarTaxa">
                       <option value="">Escolha</option>
 
                     <?php
                         
                         $pdo = new PDO("pgsql:host=localhost; dbname=mercadinho;", "postgres", "postgres");
 
-                        foreach($pdo->query('select * from marca') as $row){
-                            echo '<option value="'.$row['id'].'">'.$row['nome'].'</option>';
+                        foreach($pdo->query('select * from impostos') as $row){
+                            echo '<option value="'.$row['taxa'].'">'.$row['nome'].'</option>';
                         }   
                     ?>
                     

@@ -9,12 +9,12 @@
 </head>
 <body>
     <header>
-        <h1>Mercadinho da Soft - Cadastro de marcas</h1>
+        <h1>Mercadinho da Soft - Cadastro Impostos</h1>
 
         <nav>
             <a href="../../index.html" type="button" class="btn btn-secondary btn-sm btn-sm">Home</a>
             <a href="cadastroProduto.php" type="button" class="btn btn-secondary btn-sm btn-sm">Cadastro de produtos</a>
-            <a href="cadastroMarcas.php" type="button" class="btn btn-secondary btn-sm btn-sm">Cadastro de marcas</a>
+            <a href="cadastroTiposs.php" type="button" class="btn btn-secondary btn-sm btn-sm">Cadastro de impostos</a>
             <a href="../vendas.php" type="button" class="btn btn-secondary btn-sm btn-sm">Vendas</a>
         </nav>
     </header>
@@ -22,16 +22,16 @@
 
     <section>
        
-        <form name="frmCadastroMarca" id="frmCadastroMarca" method="POST" action="../../system/inserir_marcas.php">
+        <form name="frmCadastroMarca" id="frmCadastroMarca" method="POST" action="../../system/inserir_impostos.php">
 
             <legend>Cadastre sua marca</legend>
             <div class="form-group">
-                <label for="nomeMarca">Nome da marca: </label>
-                <input type="text" class="form-control" name="nomeMarca" id="nomeMarca" placeholder="Royal">
+                <label for="nomeTipo">Tipo de imposto: </label>
+                <input type="text" class="form-control" name="nomeTipo" id="nomeTipo" placeholder="Alimentos">
             </div>
 
             <div class="form-group">
-                    <label for="taxaImposto">Imposto: </label>
+                    <label for="taxaImposto">Taxa (%): </label>
                     <input type="text" class="form-control" name="taxaImposto" id="taxaImposto" placeholder="0.70 (%)">
             </div>
             

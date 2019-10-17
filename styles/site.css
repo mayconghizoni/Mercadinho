@@ -24,6 +24,11 @@ body{
 section{
     min-height: 500px;
 }
+#tituloIndex{
+    text-align: center;
+    color: coral;
+    margin: 50px auto;
+}
 #frmCadastroProduto, #frmCadastroMarca, #frmVendaProduto{
     width: 500px;
     margin: 20px auto;

@@ -12,30 +12,22 @@ else if($_POST["valorProduto"] == ""){
     echo  "<script> alert('Preencha o campo valor do produto.');";
     echo "javascript:window.location='../pages/cadastros/cadastroProduto.php';</script>";
 }
-else if($_POST["selecionarMarca"] == ""){
+else if($_POST["selecionarTaxa"] == ""){
     echo  "<script> alert('Selecione a marca do produto.');";
     echo "javascript:window.location='../pages/cadastros/cadastroProduto.php';</script>";
 }
 else{
 
     $nome = $_POST["nomeProduto"];
-    $quantidade = $_POST["quantidadeProduto"];
+    $qtd = $_POST["quantidadeProduto"];
     $valor = $_POST["valorProduto"];
-    $marca = $_POST["selecionarMarca"];
+    $taxa = $_POST["selecionarTaxa"];
 
     try { 
 
         $pdo = new PDO("pgsql:host=localhost; dbname=mercadinho;", "postgres", "postgres");
 
-        $pdo_exec = $pdo->exec("INSERT INTO produtos (id, marcas_id, nome, quantidade, valor) VALUES (nextval('books_sequence_2'), $marca , '$nome', $quantidade, $valor);");
-
-        // print_r($pdo->errorInfo());
-
-        // echo "<hr>";
-
-        // $pdo_query = $pdo->query("select * from produtos;");
-
-        // print_r($pdo->errorInfo());
+        $pdo_exec = $pdo->exec("INSERT INTO produtos (taxa, nome, quantidade, valor) VALUES ($taxa , '$nome', $qtd, $valor);");
 
         if($pdo_exec){
             echo "<script> alert('Cadastro efetuado com sucesso!');";
