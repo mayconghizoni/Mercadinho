@@ -26,7 +26,8 @@ else if($_POST["qtdVendida"] == ""){
 
     if($linhas_quantidade_atual['quantidade'] < $qtd){
 
-        echo "<script> alert('Itens insuficientes no estoque!') </script>";
+        echo "<script> alert('Itens insuficientes no estoque!');";
+        echo "javascript:window.location='../pages/vendas.php';</script>";
 
     }else{
 
