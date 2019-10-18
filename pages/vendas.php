@@ -34,11 +34,11 @@
                   <option value="">Escolha</option>
 
                     <?php
-                        
+
+                        //importa arquivo de conexao com banco de dados
                         include "../system/conexao.php";
 
-                        // $pdo = new PDO("pgsql:host=localhost; dbname=mercadinho;", "postgres", "postgres");
-
+                        //Carrega produtos do banco de dados criando uma tag html <option> para cada item do banco, passsando o id dos produtos como valor da option
                         foreach($pdo->query('select * from produtos') as $row){
                             echo '<option value="'.$row['id'].'">'.$row['nome'].'</option>';
                         }   

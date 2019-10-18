@@ -47,8 +47,10 @@
 
                     <?php
                         
+                        //importa arquivo com conexao do banco de dados
                         include "../../system/conexao.php";
                         
+                        //Carrega tipos de impostos do banco de dados criando uma tag html <option> para cada item do banco, passsando a taxa de cada imposto como valor da option
                         foreach($pdo->query('select * from impostos') as $row){
                             echo '<option value="'.$row['taxa'].'">'.$row['nome'].'</option>';
                         }   

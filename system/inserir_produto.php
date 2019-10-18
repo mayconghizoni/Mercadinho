@@ -1,5 +1,7 @@
 <?php
 
+//Verifica se os campos do formulário estão preenchidos
+
 if($_POST["nomeProduto"] == ""){
     echo  "<script> alert('Preencha o campo nome do produto.');";
     echo "javascript:window.location='../pages/cadastros/cadastroProduto.php'</script>";
@@ -25,10 +27,13 @@ else{
 
     try { 
 
+        //importa arquivo de conexao com banco de dados
         include "conexao.php";
 
+        //Executa comando para inserir novo produto no banco de dados
         $pdo_exec = $pdo->exec("INSERT INTO produtos (taxa, nome, quantidade, valor) VALUES ($taxa , '$nome', $qtd, $valor);");
 
+        //Exibe mensagem em caso de sucesso ou erro no insert
         if($pdo_exec){
             echo "<script> alert('Cadastro efetuado com sucesso!');";
             echo "javascript:window.location='../pages/cadastros/cadastroProduto.php';</script>";
