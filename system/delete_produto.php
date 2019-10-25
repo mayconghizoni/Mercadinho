@@ -28,7 +28,7 @@ else if($_POST["qtdVendida"] == ""){
     $consulta->closeCursor();
 
     //Caso a quantidade de produtos em estoque seja menor que a solicitada, exibe mensagem
-    if($linhas_quantidade_atual['quantidade'] < $qtd){
+    if($linhas_quantidade_atual['quantidade'] <= $qtd){
 
         echo "<script> alert('Itens insuficientes no estoque!');";
         echo "javascript:window.location='../pages/vendas.php';</script>";

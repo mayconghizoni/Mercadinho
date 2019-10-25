@@ -31,7 +31,7 @@
             </div>
             <div class="form-group">
                 <label for="valorProduto">Valor do produto: </label>
-                <input type="text" class="form-control" name="valorProduto" id="valorProduto" placeholder="R$5,00">
+                <input type="decimal" class="form-control" name="valorProduto" id="valorProduto" placeholder="R$5,00">
             </div>
             <div class="form-group">
                 <label for="quantidadeProduto">Quantidade do produto: </label>
