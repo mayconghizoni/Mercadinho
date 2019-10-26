@@ -14,7 +14,7 @@
         <nav>
             <a href="../../index.html" type="button" class="btn btn-secondary btn-sm btn-sm">Home</a>
             <a href="cadastroProduto.php" type="button" class="btn btn-secondary btn-sm btn-sm">Cadastro de produtos</a>
-            <a href="cadastroTiposs.php" type="button" class="btn btn-secondary btn-sm btn-sm">Cadastro de impostos</a>
+            <a href="cadastroTipos.php" type="button" class="btn btn-secondary btn-sm btn-sm">Cadastro de impostos</a>
             <a href="../vendas.php" type="button" class="btn btn-secondary btn-sm btn-sm">Vendas</a>
         </nav>
     </header>
@@ -24,7 +24,7 @@
        
         <form name="frmCadastroMarca" id="frmCadastroMarca" method="POST" action="../../system/inserir_impostos.php">
 
-            <legend>Cadastre sua marca</legend>
+            <legend>Cadastre sua imposto</legend>
             <div class="form-group">
                 <label for="nomeTipo">Tipo de imposto: </label>
                 <input type="text" class="form-control" name="nomeTipo" id="nomeTipo" placeholder="Alimentos">
@@ -37,7 +37,7 @@
             
             <hr>
             
-            <button type="submit" class="btn btn-primary">Cadastrar marca</button>
+            <button type="submit" class="btn btn-primary">Cadastrar imposto</button>
             <button type="reset" class="btn btn-danger">Limpar</button>
             
         </form>
