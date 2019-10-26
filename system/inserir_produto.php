@@ -14,8 +14,8 @@ else if($_POST["valorProduto"] == ""){
     echo  "<script> alert('Preencha o campo valor do produto.');";
     echo "javascript:window.location='../pages/cadastros/cadastroProduto.php';</script>";
 }
-else if($_POST["selecionarTaxa"] == ""){
-    echo  "<script> alert('Selecione a marca do produto.');";
+else if($_POST["selecionarImposto"] == ""){
+    echo  "<script> alert('Selecione o tipo de imposto do produto.');";
     echo "javascript:window.location='../pages/cadastros/cadastroProduto.php';</script>";
 }
 else{
@@ -23,23 +23,23 @@ else{
     $nome = $_POST["nomeProduto"];
     $qtd = $_POST["quantidadeProduto"];
     $valor = $_POST["valorProduto"];
-    $taxa = $_POST["selecionarTaxa"];
+    $impostos_id = $_POST["selecionarImposto"];
 
     try { 
 
         //importa arquivo de conexao com banco de dados
-        include "conexao.php";
+        include "connection/conexao.php";
 
         //Executa comando para inserir novo produto no banco de dados
-        $pdo_exec = $pdo->exec("INSERT INTO produtos (taxa, nome, quantidade, valor) VALUES ($taxa , '$nome', $qtd, $valor);");
+        $pdo_exec = $pdo->exec("INSERT INTO produtos (impostos_id, nome, quantidade, valor) VALUES ($impostos_id , '$nome', $qtd, $valor);");
 
         //Exibe mensagem em caso de sucesso ou erro no insert
         if($pdo_exec){
             echo "<script> alert('Cadastro efetuado com sucesso!');";
-            echo "javascript:window.location='../pages/cadastros/cadastroProduto.php';</script>";
+            echo "javascript:window.location='../pages/produtos.php';</script>";
         }else{
             echo "<script> alert('Erro ao efetuar cadastro!');";
-            echo "javascript:window.location='../pages/cadastros/cadastroProduto.php';</script>";
+            echo "javascript:window.location='../pages/produtos.php';</script>";
         }
 
      } catch (PDOException  $e) {

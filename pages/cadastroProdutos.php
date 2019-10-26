@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="../../styles/site.css">
+    <link rel="stylesheet" type="text/css" href="/MercadinhoDaSoft/styles/site.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <title>Mercadinho da Soft</title>
 </head>
@@ -12,17 +12,17 @@
         <h1>Mercadinho da Soft - Cadastro de produtos</h1>
 
         <nav>
-            <a href="../../index.html" type="button" class="btn btn-secondary btn-sm btn-sm">Home</a>
-            <a href="cadastroProduto.php" type="button" class="btn btn-secondary btn-sm btn-sm">Cadastro de produtos</a>
-            <a href="cadastroTipos.php" type="button" class="btn btn-secondary btn-sm btn-sm">Cadastro de impostos</a>
-            <a href="../vendas.php" type="button" class="btn btn-secondary btn-sm btn-sm">Vendas</a>
+            <a href="/MercadinhoDaSoft/index.html" type="button" class="btn btn-secondary btn-sm btn-sm">Home</a>
+            <a href="/MercadinhoDaSoft/pages/produtos.php" type="button" class="btn btn-secondary btn-sm btn-sm">Produtos</a>
+            <a href="/MercadinhoDaSoft/pages/impostos.php" type="button" class="btn btn-secondary btn-sm btn-sm">Impostos</a>
+            <a href="/MercadinhoDaSoft/pages/vendas.php" type="button" class="btn btn-secondary btn-sm btn-sm">Vendas</a>
         </nav>
     </header>
 
 
     <section>
        
-        <form name="frmCadastroProduto" id="frmCadastroProduto" method="POST" action="../../system/inserir_produto.php">
+        <form name="frmCadastroProdutos" id="frmCadastroProdutos" method="POST" action="../system/inserir_produto.php">
 
             <legend>Cadastre seu produto</legend>
             <div class="form-group">
@@ -41,26 +41,26 @@
             <!-- Deve puxar marcas cadastradas no banco de dados -->
             <div class="form-row align-items-center">
                 <div class="col-auto my-1">
-                <label for="selecionarTaxa">Selecione o tipo de imposto do produto: </label>
-                  <select name="selecionarTaxa" class="custom-select mr-sm-2" id="selecionarTaxa">
+                <label for="selecionarImposto">Selecione o tipo de imposto do produto: </label>
+                  <select name="selecionarImposto" class="custom-select mr-sm-2" id="selecionarTaxa">
                       <option value="">Escolha</option>
 
                     <?php
                         
                         //importa arquivo com conexao do banco de dados
-                        include "../../system/conexao.php";
+                        include "../system/connection/conexao.php";
                         
                         //Carrega tipos de impostos do banco de dados criando uma tag html <option> para cada item do banco, passsando a taxa de cada imposto como valor da option
                         foreach($pdo->query('select * from impostos') as $row){
-                            echo '<option value="'.$row['taxa'].'">'.$row['nome'].'</option>';
+                            echo '<option value="'.$row['id'].'">'.$row['nome'].'</option>';
                         }   
                     ?>
                     
                   </select>
 
                 </div>
-            </div>
-            
+            </div>   
+
             <hr>
             
             <button type="submit" class="btn btn-primary">Cadastrar produto</button>

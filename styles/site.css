@@ -29,7 +29,7 @@ section{
     color: coral;
     margin: 50px auto;
 }
-#frmCadastroProduto, #frmCadastroMarca, #frmVendaProduto{
+#frmExibirImpostos, #frmExibirProdutos, #frmCadastroImpostos, #frmCadastroProdutos, #frmVendaProduto{
     width: 500px;
     margin: 20px auto;
 }
