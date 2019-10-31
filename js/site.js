@@ -16,24 +16,14 @@ $(document).ready(function(){
                 modal: true,
                 buttons:{
                     "Sim": function(id){
-                        // $.ajax({
-                        //     type: "POST",
-                        //     url: "/MercadinhoDaSoft/system/deletar_impostos.php",
-                        //     data: id,
-                        //     success: function(){
 
-                        //     },
-                        //     error: function(){
-                            
-                        //     }
-                        // })
                     },
                     "Cancelar": function(){
                         $(this).dialog("close");
                     }
                 },
                 close: function(){
-                    //caso o usuário simplesmente feche a caixa de edição não acontece nada.
+                    
                 }
             }
     
