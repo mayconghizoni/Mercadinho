@@ -33,3 +33,7 @@ section{
     width: 500px;
     margin: 20px auto;
 }
+
+#modal{
+    display: none;
+}

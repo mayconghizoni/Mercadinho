@@ -4,9 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="/MercadinhoDaSoft/styles/site.css">
+    <link rel="stylesheet" type="text/css" href="/MercadinhoDaSoft/styles/jquery-ui.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script src="../js/site.js"></script>
+    <script src="../js/jquery-ui.js"></script>
     <title>Mercadinho da Soft</title>
 </head>
 <body>
@@ -51,9 +53,11 @@
             <hr>
 
             <a href="/MercadinhoDaSoft/pages/cadastroImpostos.html" type="button" class="btn btn-primary">Cadastrar novo imposto</a>
-            <button type="button" class="btn btn-success">Editar imposto</button>
-            <button type="button" class="btn btn-danger">Excluir imposto</button>
+            <button type="button" name="editar" class="btn btn-success">Editar imposto</button>
+            <button onclick="SOFT.excluir()" type="button" name="excluir" class="btn btn-danger">Excluir imposto</button>
     </form>
+
+    <div id="modal" class="modal"></div>
 
     </section>
 </body>
