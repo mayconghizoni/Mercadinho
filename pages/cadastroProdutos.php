@@ -22,7 +22,7 @@
 
     <section>
        
-        <form name="frmCadastroProdutos" id="frmCadastroProdutos" method="POST" action="../system/inserir_produto.php">
+        <form name="frmCadastroProdutos" id="frmCadastroProdutos" method="POST" action="../system/inserir_produtos.php">
 
             <legend>Cadastre seu produto</legend>
             <div class="form-group">

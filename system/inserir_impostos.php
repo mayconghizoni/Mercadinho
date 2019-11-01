@@ -3,11 +3,11 @@
 //Verifica se os campos do formulário estão preenchidos
 if($_POST["nomeImposto"] == ""){
     echo  "<script> alert('Preencha o campo tipo de imposto.');";
-    echo "javascript:window.location='../pages/cadastros/cadastroTipos.php'</script>";
+    echo "javascript:window.location='../pages/impostos.php'</script>";
 }
 else if($_POST["taxaImposto"] == ""){
     echo  "<script> alert('Preencha o campo Imposto.');";
-    echo "javascript:window.location='../pages/cadastros/cadastroTipos.php';</script>";
+    echo "javascript:window.location='../pages/impostos.php';</script>";
 }
 else{
     $nome = $_POST["nomeImposto"];
