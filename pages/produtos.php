@@ -50,7 +50,7 @@
 
         <a href="/MercadinhoDaSoft/pages/cadastroProdutos.php" type="button" class="btn btn-primary">Cadastrar novo produto</a>
         <button type="submit" class="btn btn-success">Editar produto</button>
-        <button type="submit" formaction="/MercadinhoDaSoft/system/excluir_produtos.php" formmethod="POST" formenctype="multipart/form-data" class="btn btn-danger">Excluir produto</button>
+        <button type="submit" formaction="/MercadinhoDaSoft/system/view/excluir_produtos.php" formmethod="POST" formenctype="multipart/form-data" class="btn btn-danger">Excluir produto</button>
     </form>
 
     </section>

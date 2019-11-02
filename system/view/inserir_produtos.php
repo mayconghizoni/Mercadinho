@@ -4,19 +4,19 @@
 
 if($_POST["nomeProduto"] == ""){
     echo  "<script> alert('Preencha o campo nome do produto.');";
-    echo "javascript:window.location='../pages/cadastros/cadastroProduto.php'</script>";
+    echo "javascript:window.location='../pages/cadastroProduto.php'</script>";
 }
 else if($_POST["quantidadeProduto"] == ""){
     echo  "<script> alert('Preencha o campo Quantidade do produto.');";
-    echo "javascript:window.location='../pages/cadastros/cadastroProduto.php';</script>";
+    echo "javascript:window.location='../pages/cadastroProduto.php';</script>";
 }
 else if($_POST["valorProduto"] == ""){
     echo  "<script> alert('Preencha o campo valor do produto.');";
-    echo "javascript:window.location='../pages/cadastros/cadastroProduto.php';</script>";
+    echo "javascript:window.location='../pages/cadastroProduto.php';</script>";
 }
 else if($_POST["selecionarImposto"] == ""){
     echo  "<script> alert('Selecione o tipo de imposto do produto.');";
-    echo "javascript:window.location='../pages/cadastros/cadastroProduto.php';</script>";
+    echo "javascript:window.location='../pages/cadastroProduto.php';</script>";
 }
 else{
 
@@ -26,20 +26,20 @@ else{
     $impostos_id = $_POST["selecionarImposto"];
 
     try { 
+        
+        require_once "../controller/produto.php";
 
-        //importa arquivo de conexao com banco de dados
-        include "connection/conexao.php";
+        $prod = new produto;
 
-        //Executa comando para inserir novo produto no banco de dados
-        $pdo_exec = $pdo->exec("INSERT INTO produtos (impostos_id, nome, quantidade, valor) VALUES ($impostos_id , '$nome', $qtd, $valor);");
+        $resultado = $prod->cadastrar($impostos_id, $nome, $qtd, $valor);
 
         //Exibe mensagem em caso de sucesso ou erro no insert
-        if($pdo_exec){
+        if($resultado){
             echo "<script> alert('Cadastro efetuado com sucesso!');";
-            echo "javascript:window.location='../pages/produtos.php';</script>";
+            echo "javascript:window.location='../../pages/produtos.php';</script>";
         }else{
             echo "<script> alert('Erro ao efetuar cadastro!');";
-            echo "javascript:window.location='../pages/produtos.php';</script>";
+            echo "javascript:window.location='../../pages/produtos.php';</script>";
         }
 
      } catch (PDOException  $e) {

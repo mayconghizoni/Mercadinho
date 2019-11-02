@@ -50,8 +50,8 @@
             <hr>
 
             <a href="/MercadinhoDaSoft/pages/cadastroImpostos.html" type="button" class="btn btn-primary">Cadastrar novo imposto</a>
-            <button type="submit" class="btn btn-success">Editar imposto</button>
-            <button type="submit" formaction="/MercadinhoDaSoft/system/excluir_impostos.php" formmethod="POST" formenctype="multipart/form-data" class="btn btn-danger">Excluir imposto</button>
+            <button type="submit" formaction="/MercadinhoDaSoft/system/view/editar_impostos.php" formmethod="POST" formenctype="multipart/form-data" class="btn btn-success">Editar imposto</button>
+            <button type="submit" formaction="/MercadinhoDaSoft/system/view/excluir_impostos.php" formmethod="POST" formenctype="multipart/form-data" class="btn btn-danger">Excluir imposto</button>
     </form>
 
     </section>

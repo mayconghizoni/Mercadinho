@@ -12,17 +12,18 @@
 
         try{
 
-            include "connection/conexao.php";
+            require_once "../controller/produto.php";
 
-            //Executa comando para inserir novo tipo de imposto no banco de dados
-            $pdo_exec = $pdo->exec("DELETE FROM produtos WHERE id = $id;");
+            $prod = new produto;
 
-            if($pdo_exec){
+            $resultado = $prod->excluir($id);
+
+            if($resultado){
                 echo  "<script> alert('Produto deletado com sucesso!');";
-                echo "javascript:window.location='../pages/produtos.php';</script>";
+                echo "javascript:window.location='../../pages/produtos.php';</script>";
             }else{
                 echo "<script> alert('Erro ao deletar produto!');";
-                echo "javascript:window.location='../pages/produtos.php';</script>";
+                echo "javascript:window.location='../../pages/produtos.php';</script>";
             }
            
         }catch (PDOException  $e) {

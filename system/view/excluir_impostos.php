@@ -11,18 +11,19 @@
         $id = $_POST["selecionarImposto"];
 
         try{
+            
+            require_once "../controller/imposto.php";
 
-            include "connection/conexao.php";
+            $imp = new imposto;
 
-            //Executa comando para inserir novo tipo de imposto no banco de dados
-            $pdo_exec = $pdo->exec("DELETE FROM impostos WHERE id = $id;");
+            $resultado = $imp->excluir($id);
 
-            if($pdo_exec){
+            if($resultado){
                 echo  "<script> alert('Imposto deletado com sucesso!');";
-                echo "javascript:window.location='../pages/impostos.php';</script>";
+                echo "javascript:window.location='../../pages/impostos.php';</script>";
             }else{
-                echo "<script> alert('Erro ao deletar imposto!');";
-                echo "javascript:window.location='../pages/impostos.php';</script>";
+                echo "<script> alert('Erro ao deletar imposto! Confira que este imposto não está sendo usando por nenhum produto.');";
+                echo "javascript:window.location='../../pages/impostos.php';</script>";
             }
            
         }catch (PDOException  $e) {

@@ -21,7 +21,7 @@
 
     <section>
         
-        <form name="frmVendaProduto" id="frmVendaProduto" method="POST" action="../system/venda_produto.php">
+        <form name="frmVendaProduto" id="frmVendaProduto" method="POST" action="../system/view/venda_produto.php">
 
             <!-- Deve puxar produtos cadastrados no banco de dados -->
             <legend>Selecione um produto para venda</legend>

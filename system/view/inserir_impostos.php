@@ -14,21 +14,20 @@ else{
     $taxa = $_POST["taxaImposto"];
 
     try {
-        
-        //importa arquivo de conexao com banco de dados
 
-        include "connection/conexao.php";
+        require_once "../controller/imposto.php";
 
-        //Executa comando para inserir novo tipo de imposto no banco de dados
-        $pdo_exec = $pdo->exec("INSERT INTO impostos (nome, taxa) VALUES ('$nome', $taxa);");
+        $imp = new imposto;
+
+        $resultado = $imp->cadastrar($nome, $taxa);
 
         //Exibe mensagem em caso de sucesso ou erro no insert
-        if($pdo_exec){
+        if($resultado){
             echo  "<script> alert('Cadastro efetuado com sucesso!');";
-            echo "javascript:window.location='../pages/impostos.php';</script>";
+            echo "javascript:window.location='../../pages/impostos.php';</script>";
         }else{
             echo "<script> alert('Erro ao efetuar cadastro!');";
-            echo "javascript:window.location='../pages/impostos.php';</script>";
+            echo "javascript:window.location='../../pages/impostos.php';</script>";
         }
 
      } catch (PDOException  $e) {
