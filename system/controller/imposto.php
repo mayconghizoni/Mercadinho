@@ -1,12 +1,12 @@
 <?php
 
-// include "MercadinhoDaSoft/system/connection/conexao.php"; 
+include "../connection/conexao.php"; 
 
 class imposto{
 
     function excluir($id){
 
-        $pdo = new PDO("pgsql:host=localhost; dbname=mercadinho;", "postgres", "postgres"); //Verificar
+        global $pdo;
 
         $resultado = $pdo->exec("DELETE FROM impostos WHERE id = $id;");
 
@@ -20,7 +20,7 @@ class imposto{
 
     function cadastrar($nome, $taxa){
         
-        $pdo = new PDO("pgsql:host=localhost; dbname=mercadinho;", "postgres", "postgres"); //Verificar
+        global $pdo;
 
         //Executa comando para inserir novo tipo de imposto no banco de dados
         $resultado = $pdo->exec("INSERT INTO impostos (nome, taxa) VALUES ('$nome', $taxa);");
