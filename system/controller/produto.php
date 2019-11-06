@@ -14,7 +14,13 @@ class produto{
 
     }
 
-    function editar(){
+    function editar($nome, $qtd, $valor, $impostos_id, $id){
+
+        global $pdo;
+
+        $resultado = $pdo->exec("UPDATE produtos SET nome = '$nome', quantidade = $qtd, valor = $valor, impostos_id = $impostos_id WHERE id = $id;");
+
+        return $resultado;
 
     }
 
@@ -45,7 +51,7 @@ class produto{
         $consulta->closeCursor();
 
         //Caso a quantidade de produtos em estoque seja menor que a solicitada, exibe mensagem
-            if($linhas_quantidade_atual['quantidade'] <= $qtd){
+            if($linhas_quantidade_atual['quantidade'] < $qtd){
 
                 echo "<script> alert('Itens insuficientes no estoque!');";
                 echo "javascript:window.location='../../pages/vendas.php';</script>";
