@@ -1,14 +1,36 @@
 <?php
 
-if($_POST["selecionarImposto"] == ""){
-
-    echo  "<script> alert('Selecione um imposto para ser editado.');";
+//Verifica se os campos do formulário estão preenchidos
+if($_POST["nomeImposto"] == ""){
+    echo  "<script> alert('Preencha o campo tipo de imposto.');";
     echo "javascript:window.location='../../pages/impostos.php'</script>";
+}
+else if($_POST["taxaImposto"] == ""){
+    echo  "<script> alert('Preencha o campo Imposto.');";
+    echo "javascript:window.location='../../pages/impostos.php';</script>";
+}else if($_POST["idImposto"] == ""){
+    echo  "<script> alert('FATAL ERROR!');";
+    echo "javascript:window.location='../../pages/impostos.php';</script>";
+}
+else{
+    $id = $_POST["idImposto"];
+    $nome = $_POST["nomeImposto"];
+    $taxa = $_POST["taxaImposto"];
 
-}else{
+    require_once "../controller/imposto.php";
 
-    $id = $_POST["selecionarImposto"];
+    $imp = new imposto;
 
-    echo ($id);
+    $resultado = $imp->editar($id, $nome, $taxa);
+
+    if($resultado){
+        echo  "<script> alert('Imposto editado com sucesso!');";
+        echo "javascript:window.location='../../pages/impostos.php';</script>";
+    }else{
+        echo "<script> alert('Erro ao editar imposto! Confira que este imposto não está sendo usando por nenhum produto.');";
+        echo "javascript:window.location='../../pages/impostos.php';</script>";
+    }
 
 }
+
+?>

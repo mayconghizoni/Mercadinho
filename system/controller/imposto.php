@@ -14,7 +14,13 @@ class imposto{
 
     }
 
-    function editar(){
+    function editar($id, $nome, $taxa){
+
+        global $pdo;
+
+        $resultado = $pdo->exec("UPDATE impostos SET nome = '$nome', taxa = $taxa WHERE id = $id;");
+
+        return $resultado;
 
     }
 
