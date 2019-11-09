@@ -19,10 +19,13 @@ else{
 
     require_once "../controller/imposto.php";
 
+    //instancia novo objeto do tipo imposto e chama o método editar imposto
+
     $imp = new imposto;
 
     $resultado = $imp->editar($id, $nome, $taxa);
-
+    
+    //Mostra mensagem pós execução de comando
     if($resultado){
         echo  "<script> alert('Imposto editado com sucesso!');";
         echo "javascript:window.location='../../pages/impostos.php';</script>";
