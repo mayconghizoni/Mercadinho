@@ -6,8 +6,8 @@ if($_POST["selecionarProduto"] == ""){
     echo  "<script> alert('Selecione o produto a ser vendido.');";
     echo "javascript:window.location='../../pages/vendas.php';</script>";
 }
-else if($_POST["qtdVendida"] == ""){
-    echo  "<script> alert('Selecione o deseja vender.');";
+else if($_POST["qtdVendida"] == "" || $_POST["qtdVendida"] <= 0){
+    echo  "<script> alert('Selecione quantos produtos deseja vender.');";
     echo "javascript:window.location='../../pages/vendas.php';</script>";
 }else{
     $qtd = $_POST["qtdVendida"];

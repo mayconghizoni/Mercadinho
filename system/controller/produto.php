@@ -59,7 +59,7 @@ class produto{
             }else{
 
                 //Consulta taxa referente a produto
-                $consulta = $pdo->prepare("SELECT produtos.*, impostos.taxa AS taxa FROM produtos INNER JOIN impostos ON produtos.impostos_id = impostos.id;");
+                $consulta = $pdo->prepare("SELECT produtos.*, impostos.taxa AS taxa FROM produtos INNER JOIN impostos ON produtos.impostos_id = impostos.id and produtos.id=$produto;");
 
                 $consulta->bindParam(':taxa', $_GET['taxa'], PDO::PARAM_STR);
 

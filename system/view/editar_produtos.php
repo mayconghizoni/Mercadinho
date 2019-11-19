@@ -4,19 +4,19 @@
 
 if($_POST["nomeProduto"] == ""){
     echo  "<script> alert('Preencha o campo nome do produto.');";
-    echo "javascript:window.location='../pages/edicaoProdutos.php'</script>";
+    echo "javascript:window.location='../../pages/edicaoProdutos.php'</script>";
 }
 else if($_POST["quantidadeProduto"] == ""){
     echo  "<script> alert('Preencha o campo Quantidade do produto.');";
-    echo "javascript:window.location='../pages/edicaoProdutos.php';</script>";
+    echo "javascript:window.location='../../pages/edicaoProdutos.php';</script>";
 }
 else if($_POST["valorProduto"] == ""){
     echo  "<script> alert('Preencha o campo valor do produto.');";
-    echo "javascript:window.location='../pages/edicaoProdutos.php';</script>";
+    echo "javascript:window.location='../../pages/edicaoProdutos.php';</script>";
 }
 else if($_POST["selecionarImposto"] == ""){
     echo  "<script> alert('Selecione o tipo de imposto do produto.');";
-    echo "javascript:window.location='../pages/edicaoProdutos.php';</script>";
+    echo "javascript:window.location='../../pages/edicaoProdutos.php';</script>";
 }
 else{
 
